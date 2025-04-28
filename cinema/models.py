@@ -90,8 +90,7 @@ class Ticket(models.Model):
             (self.seat, "seat", "count_seats_in_row"),
         ]:
             count_attrs = getattr(self.movie_session.cinema_hall,
-                                  cinema_hall_attr_name
-                                  )
+                                  cinema_hall_attr_name)
             if not (1 <= ticket_attr_value <= count_attrs):
                 raise ValidationError(
                     {
