@@ -28,9 +28,14 @@ class GenreDetailSerializer(serializers.ModelSerializer):
 
 
 class CinemaHallListSerializer(serializers.ModelSerializer):
+    capacity = serializers.SerializerMethodField()
+
     class Meta:
         model = CinemaHall
         fields = ("name", "rows", "seats_in_row", "capacity")
+
+    def get_capacity(self, obj):
+        return obj.capacity
 
 
 class CinemaHallDetailSerializer(serializers.ModelSerializer):
