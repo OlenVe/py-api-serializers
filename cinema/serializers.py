@@ -35,6 +35,7 @@ class CinemaHallListSerializer(serializers.ModelSerializer):
 
 class CinemaHallDetailSerializer(serializers.ModelSerializer):
     capacity = serializers.SerializerMethodField()
+
     class Meta:
         model = CinemaHall
         fields = ("id", "name", "rows", "seats_in_row", "capacity")
